@@ -1,14 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function StowageFactor() {
-  const textContainer = {
+  // Added Variants type here
+  const textContainer: Variants = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
 
-  const textItem = {
+  // Added Variants type here
+  const textItem: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
@@ -17,7 +19,6 @@ export default function StowageFactor() {
     <section className="w-full py-20 lg:py-32 px-4 bg-white overflow-hidden border-t border-gray-100">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
         
-        {/* Left Side: Technical Text */}
         <motion.div
           variants={textContainer}
           initial="hidden"
@@ -56,7 +57,6 @@ export default function StowageFactor() {
           </div>
         </motion.div>
 
-        {/* Right Side: Data & Formula Visualization */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -66,7 +66,6 @@ export default function StowageFactor() {
         >
            <div className="relative w-full bg-prideDark p-8 sm:p-10 lg:p-14 flex flex-col justify-center shadow-2xl border-t-4 border-prideOrange overflow-hidden">
              
-             {/* Animated Huge Background Text - Safely constrained */}
              <motion.div 
                initial={{ x: -30, opacity: 0 }}
                whileInView={{ x: 0, opacity: 1 }}

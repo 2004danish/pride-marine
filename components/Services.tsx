@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Anchor, Ship, Box, Compass, Briefcase, Ruler } from "lucide-react";
 
 export default function Services() {
@@ -13,12 +13,14 @@ export default function Services() {
     { title: "Maritime Project Support", icon: <Ruler size={40} strokeWidth={1} /> }
   ];
 
-  const containerVariants = {
+  // Added Variants type here
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
 
-  const itemVariants = {
+  // Added Variants type here
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
@@ -38,7 +40,6 @@ export default function Services() {
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-prideDark uppercase tracking-tighter">Our Services</h2>
         </motion.div>
 
-        {/* Flawless Responsive Grid Borders via gap-[1px] Trick */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -52,7 +53,6 @@ export default function Services() {
               variants={itemVariants}
               className="bg-white group p-8 sm:p-10 lg:p-14 hover:bg-prideDark transition-all duration-500 relative overflow-hidden"
             >
-              {/* Orange Hover Accent Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-prideOrange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               
               <div className="text-prideDark mb-6 lg:mb-8 group-hover:text-prideOrange transition-colors duration-500">
