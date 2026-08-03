@@ -1,0 +1,37 @@
+import Navbar from "../../components/Navbar";
+import AboutComponent from "../../components/About";
+import Fleet from "../../components/Fleet";
+import Footer from "../../components/Footer";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "800", "900"] });
+
+export default function AboutPage() {
+  return (
+    <main className={`flex min-h-screen flex-col bg-white text-[#111111] overflow-x-hidden ${inter.className}`}>
+      <Navbar />
+      
+      {/* Premium Inner Page Header */}
+      <div className="relative w-full pt-48 pb-24 bg-black flex flex-col items-center justify-center text-center px-4">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#111111]"></div>
+        
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="w-16 h-1 bg-prideOrange mb-6"></div>
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
+            About Us
+          </h1>
+          <p className="text-gray-400 font-bold tracking-[0.2em] uppercase text-xs md:text-sm">
+            Discover Our Heritage
+          </p>
+        </div>
+      </div>
+
+      {/* Page Content */}
+      <AboutComponent />
+      <Fleet />
+      
+      <Footer />
+    </main>
+  );
+}
