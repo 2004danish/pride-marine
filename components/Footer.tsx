@@ -7,8 +7,14 @@ export default function Footer() {
         
         {/* Brand Info */}
         <div>
-          <div className="text-2xl font-extrabold tracking-tighter text-white mb-4 lg:mb-6">
-            PRIDE <span className="text-prideOrange">MARINE</span>
+          {/* UPDATED FULL BRAND LOGO */}
+          <div className="flex flex-col mb-4 lg:mb-6">
+            <span className="text-2xl font-extrabold tracking-tighter text-white leading-none">
+              PRIDE <span className="text-prideOrange">MARINE</span>
+            </span>
+            <span className="text-[0.65rem] font-bold tracking-[0.2em] text-gray-400 uppercase mt-1">
+              Services LLP
+            </span>
           </div>
           <p className="text-gray-400 text-xs lg:text-sm leading-relaxed font-light">
             Smart Maritime Solutions. Trusted Partnerships. Providing specialized services across vessel chartering, commercial management, and maritime consultancy.

@@ -19,8 +19,9 @@ export default function About() {
           <div className="absolute top-8 -left-8 w-full h-full bg-prideOrange z-0 hidden lg:block"></div>
           
           <div className="absolute inset-0 z-10 bg-prideGray shadow-2xl">
+            {/* UPDATED IMAGE TAG HERE */}
             <img 
-              src="https://images.unsplash.com/photo-1542259009477-d625272157b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+              src="/download.jpeg" 
               alt="Pride Marine Vessel"
               className="w-full h-full object-cover transition-all duration-1000"
             />
@@ -43,7 +44,7 @@ export default function About() {
           </motion.div>
         </motion.div>
 
-        {/* Text & Stats - Added extra top margin for mobile to clear the box */}
+        {/* Text & Stats */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}

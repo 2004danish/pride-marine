@@ -29,8 +29,14 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
         <nav className="p-6 flex justify-between items-center max-w-7xl mx-auto">
           
-          <Link href="/" onClick={closeMenu} className="text-2xl font-extrabold tracking-tighter text-prideDark relative z-50">
-            PRIDE <span className="text-prideOrange">MARINE</span>
+          {/* UPDATED FULL BRAND LOGO */}
+          <Link href="/" onClick={closeMenu} className="flex flex-col relative z-50">
+            <span className="text-2xl font-extrabold tracking-tighter text-prideDark leading-none">
+              PRIDE <span className="text-prideOrange">MARINE</span>
+            </span>
+            <span className="text-[0.65rem] font-bold tracking-[0.2em] text-gray-500 uppercase mt-1">
+              Services LLP
+            </span>
           </Link>
           
           {/* Desktop Navigation */}
