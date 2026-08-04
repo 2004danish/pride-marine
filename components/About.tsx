@@ -19,7 +19,6 @@ export default function About() {
           <div className="absolute top-8 -left-8 w-full h-full bg-prideOrange z-0 hidden lg:block"></div>
           
           <div className="absolute inset-0 z-10 bg-prideGray shadow-2xl">
-            {/* UPDATED IMAGE TAG HERE */}
             <img 
               src="/download.jpeg" 
               alt="Pride Marine Vessel"
@@ -66,8 +65,9 @@ export default function About() {
             Operational <br/>Excellence
           </h2>
           
+          {/* UPDATED: Removed "3 Core Pillars" text from the paragraph */}
           <p className="text-base lg:text-lg text-gray-600 mb-6 lg:mb-8 leading-relaxed font-light">
-            Pride Marine Services LLP provides specialized services across our <strong className="text-prideDark font-bold">3 Core Service Pillars</strong>: Vessel Chartering, Commercial Vessel Management, and Maritime Consultancy.
+            Pride Marine Services LLP provides comprehensive maritime solutions, specializing in <strong className="text-prideDark font-bold">Vessel Chartering, Commercial Vessel Management, and Maritime Consultancy</strong>.
           </p>
           <p className="text-base lg:text-lg text-gray-600 mb-10 lg:mb-12 leading-relaxed font-light">
             We combine the operational flexibility of a partnership with a transparent legal and governance framework, ensuring accountability for our global clients.
@@ -78,9 +78,11 @@ export default function About() {
               <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-prideDark mb-1 lg:mb-2 tracking-tighter">20<span className="text-prideOrange">+</span></h3>
               <p className="font-bold text-gray-500 uppercase text-[10px] sm:text-xs tracking-widest">Years Experience</p>
             </motion.div>
+            
+            {/* UPDATED: New Stat instead of 3 Core Pillars */}
             <motion.div whileHover={{ scale: 1.05 }} className="transition-transform cursor-default">
-              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-prideDark mb-1 lg:mb-2 tracking-tighter">3</h3>
-              <p className="font-bold text-gray-500 uppercase text-[10px] sm:text-xs tracking-widest">Core Pillars</p>
+              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-prideDark mb-1 lg:mb-2 tracking-tighter">100<span className="text-prideOrange">+</span></h3>
+              <p className="font-bold text-gray-500 uppercase text-[10px] sm:text-xs tracking-widest">Vessels Handled</p>
             </motion.div>
           </div>
         </motion.div>

@@ -59,14 +59,14 @@ export default function Hero() {
             <span>Safe.</span>
           </motion.h1>
           
-          {/* Animated Subtitle - Adjusted layout constraints for phone screens */}
+          {/* Animated Subtitle - UPDATED: "Trusted Partnerships" removed */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-sm sm:text-base md:text-xl font-light text-gray-200 max-w-xs sm:max-w-md md:max-w-xl mb-8 md:mb-12 leading-relaxed tracking-wide drop-shadow-lg"
           >
-            Smart Maritime Solutions. Trusted Partnerships. We engineer the future of global trade and logistics.
+            Smart Maritime Solutions. We engineer the future of global trade and logistics.
           </motion.p>
           
           {/* Functional Responsive Routing Buttons */}

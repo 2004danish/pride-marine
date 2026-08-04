@@ -17,13 +17,14 @@ export default function ContactPage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-3 md:mb-4 drop-shadow-lg">
             Contact Us
           </h1>
-          <p className="text-gray-400 font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] sm:text-xs md:text-sm">
+          {/* UPDATED: Changed text-gray-400 to text-white for high visibility */}
+          <p className="text-white font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] sm:text-xs md:text-sm">
             Global Headquarters
           </p>
         </div>
       </div>
 
-      {/* Contact Content Section - FIXED PADDING AND GAPS FOR MOBILE */}
+      {/* Contact Content Section */}
       <section className="w-full py-16 lg:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           
@@ -31,7 +32,7 @@ export default function ContactPage() {
           <div className="bg-black text-white p-8 sm:p-10 md:p-14 shadow-2xl border-t-4 border-prideOrange w-full overflow-hidden">
             <h3 className="text-xl sm:text-2xl font-black mb-8 md:mb-12 uppercase tracking-widest text-prideOrange">Get In Touch</h3>
             
-            <div className="space-y-10 md:space-y-12 font-light text-gray-300">
+            <div className="space-y-10 md:space-y-12 font-light text-white">
               <div>
                 <h4 className="text-white font-extrabold uppercase tracking-widest text-[10px] sm:text-xs mb-2 sm:mb-3">Address</h4>
                 <p className="leading-relaxed text-xs sm:text-sm md:text-base">
@@ -46,10 +47,9 @@ export default function ContactPage() {
               </div>
               <div className="w-full">
                 <h4 className="text-white font-extrabold uppercase tracking-widest text-[10px] sm:text-xs mb-2 sm:mb-3">Email</h4>
-                {/* FIXED: Added break-all and flex-col so long emails don't break the screen width */}
-                <div className="flex flex-col space-y-1 tracking-wider text-xs sm:text-sm leading-relaxed overflow-hidden">
-                  <span className="break-all">GEN@PRIDEMARINE.IN</span>
-                  <span className="break-all">OFFICE.PRIDEMARINE@GMAIL.COM</span>
+                <div className="flex flex-col space-y-1 tracking-wider text-xs sm:text-sm md:text-base leading-relaxed overflow-hidden">
+                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">GEN@PRIDEMARINE.IN</span>
+                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">OFFICE.PRIDEMARINE@GMAIL.COM</span>
                 </div>
               </div>
             </div>

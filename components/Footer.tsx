@@ -7,24 +7,27 @@ export default function Footer() {
         
         {/* Brand Info */}
         <div>
-          {/* UPDATED FULL BRAND LOGO */}
+          {/* UPDATED: Larger logo and pure white "Services LLP" */}
           <div className="flex flex-col mb-4 lg:mb-6">
-            <span className="text-2xl font-extrabold tracking-tighter text-white leading-none">
+            <span className="text-3xl font-extrabold tracking-tighter text-white leading-none">
               PRIDE <span className="text-prideOrange">MARINE</span>
             </span>
-            <span className="text-[0.65rem] font-bold tracking-[0.2em] text-gray-400 uppercase mt-1">
+            <span className="text-xs font-bold tracking-[0.2em] text-white uppercase mt-2">
               Services LLP
             </span>
           </div>
-          <p className="text-gray-400 text-xs lg:text-sm leading-relaxed font-light">
+          {/* UPDATED: Text bumped to sm/base and changed to white */}
+          <p className="text-white text-sm lg:text-base leading-relaxed font-light">
             Smart Maritime Solutions. Trusted Partnerships. Providing specialized services across vessel chartering, commercial management, and maritime consultancy.
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-base lg:text-lg font-bold text-white mb-4 lg:mb-6 uppercase tracking-widest">Navigation</h4>
-          <ul className="space-y-3 lg:space-y-4 text-gray-400 text-xs lg:text-sm font-light">
+          {/* UPDATED: Heading size increased */}
+          <h4 className="text-lg lg:text-xl font-bold text-white mb-4 lg:mb-6 uppercase tracking-widest">Navigation</h4>
+          {/* UPDATED: Links bumped to sm/base and changed to white */}
+          <ul className="space-y-3 lg:space-y-4 text-white text-sm lg:text-base font-light">
             <li><Link href="/" className="hover:text-prideOrange transition-colors">Home</Link></li>
             <li><Link href="/about" className="hover:text-prideOrange transition-colors">About</Link></li>
             <li><Link href="/services" className="hover:text-prideOrange transition-colors">Services</Link></li>
@@ -34,8 +37,10 @@ export default function Footer() {
 
         {/* Contact Information */}
         <div>
-          <h4 className="text-base lg:text-lg font-bold text-white mb-4 lg:mb-6 uppercase tracking-widest">Contact Us</h4>
-          <ul className="space-y-4 lg:space-y-5 text-gray-400 text-xs lg:text-sm font-light">
+          {/* UPDATED: Heading size increased */}
+          <h4 className="text-lg lg:text-xl font-bold text-white mb-4 lg:mb-6 uppercase tracking-widest">Contact Us</h4>
+          {/* UPDATED: Contact info bumped to sm/base and changed to white */}
+          <ul className="space-y-4 lg:space-y-5 text-white text-sm lg:text-base font-light">
             <li className="flex items-start gap-3 lg:gap-4">
               <span className="text-prideOrange font-bold tracking-widest">A:</span>
               <span className="leading-relaxed">203/1, Rayson Arcade, Plot No. 139, Sector-8, Above HDFC Bank, Oslo Road, Gandhidham - 370201, Kutch, Gujarat.</span>
@@ -47,8 +52,8 @@ export default function Footer() {
             <li className="flex items-start gap-3 lg:gap-4">
               <span className="text-prideOrange font-bold tracking-widest">E:</span>
               <div className="flex flex-col space-y-1 overflow-hidden">
-                <span className="break-all">GEN@PRIDEMARINE.IN</span>
-                <span className="break-all">OFFICE.PRIDEMARINE@GMAIL.COM</span>
+                <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">GEN@PRIDEMARINE.IN</span>
+                <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">OFFICE.PRIDEMARINE@GMAIL.COM</span>
               </div>
             </li>
           </ul>
@@ -56,11 +61,12 @@ export default function Footer() {
       </div>
       
       {/* Copyright */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] lg:text-xs text-gray-500 font-light tracking-wide gap-4 md:gap-0 text-center md:text-left">
+      {/* UPDATED: Copyright bumped from 10px up to xs/sm, and changed to bright gray/white */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs lg:text-sm text-gray-100 font-light tracking-wide gap-4 md:gap-0 text-center md:text-left">
         <p>&copy; {new Date().getFullYear()} Pride Marine Services LLP. All rights reserved.</p>
-        <div className="space-x-4 lg:space-x-6 uppercase">
-          <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+        <div className="space-x-4 lg:space-x-6 uppercase font-medium">
+          <Link href="#" className="hover:text-prideOrange transition-colors">Privacy Policy</Link>
+          <Link href="#" className="hover:text-prideOrange transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>
