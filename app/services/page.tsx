@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import ServicesComponent from "../../components/Services";
 import StowageFactor from "../../components/StowageFactor";
+import Fleet from "../../components/Fleet"; // <-- 1. IMPORT THE BANNER HERE
 import Footer from "../../components/Footer";
 import { Inter } from "next/font/google";
 
@@ -29,6 +30,9 @@ export default function ServicesPage() {
       {/* Page Content */}
       <ServicesComponent />
       <StowageFactor />
+      
+      {/* 2. ADD THE DATABASE CTA BANNER HERE */}
+      <Fleet />
       
       <Footer />
     </main>
