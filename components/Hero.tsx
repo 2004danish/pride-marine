@@ -21,7 +21,8 @@ export default function Hero() {
           preload="auto"
           className="w-full h-full object-cover opacity-90"
         >
-          <source src="/movingship.mp4" type="video/mp4" />
+          {/* UPDATED: Changed to breakbulk.mp4 */}
+          <source src="/breakbulk.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/90 md:via-[#111111]/80 to-transparent w-full md:w-3/4"></div>
