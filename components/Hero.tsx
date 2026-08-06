@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link"; 
 import { Inter } from "next/font/google";
 
-// Added "500" weight for the medium font thickness
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "800", "900"] });
 
 export default function Hero() {
@@ -19,22 +18,22 @@ export default function Hero() {
           muted 
           playsInline 
           preload="auto"
-          className="w-full h-full object-cover opacity-90"
+          // FIXED: Removed opacity-90 so the video is fully visible and vibrant
+          className="w-full h-full object-cover"
         >
-          {/* UPDATED: Changed to breakbulk.mp4 */}
           <source src="/breakbulk.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/90 md:via-[#111111]/80 to-transparent w-full md:w-3/4"></div>
-        {/* Slightly darkened overall overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* FIXED: Massively lightened the mobile gradient so the video isn't hidden in blackness */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 md:via-black/70 to-transparent w-full md:w-3/4"></div>
+        {/* FIXED: Reduced the universal dark layer from 40% to 20% */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* FULLY RESPONSIVE CONTENT CONTAINER */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-12 md:pt-16">
         <div className="max-w-3xl">
           
-          {/* Animated Accent Line & Badge */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -42,13 +41,11 @@ export default function Hero() {
             className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6"
           >
             <div className="w-8 md:w-16 h-1 bg-prideOrange"></div>
-            {/* UPDATED: Significantly increased text size to md:text-xl */}
             <span className="text-prideOrange font-extrabold tracking-[0.15em] md:tracking-[0.2em] uppercase text-sm sm:text-base md:text-xl drop-shadow-md">
               Pride Marine Services LLP
             </span>
           </motion.div>
 
-          {/* Inter Black (900) Headline */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +57,6 @@ export default function Hero() {
             <span>Safe.</span>
           </motion.h1>
           
-          {/* Animated Subtitle - UPDATED: Pure white, medium thickness, increased text size, heavier shadow */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +66,6 @@ export default function Hero() {
             Delivering reliable maritime solutions with precision and expertise. From port operations to global logistics, we connect businesses through efficient, dependable services.
           </motion.p>
           
-          {/* Functional Responsive Routing Buttons */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +89,6 @@ export default function Hero() {
 
         </div>
       </div>
-      
     </section>
   );
 }

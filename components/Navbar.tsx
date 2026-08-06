@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Add a subtle shadow when scrolling down
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -30,16 +29,15 @@ export default function Navbar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-4" : "bg-white py-6 md:py-8"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         
-        {/* Logo - UPDATED: All text is now equal size and weight */}
-        <Link href="/" className="flex items-center gap-1.5 z-50 whitespace-nowrap shrink-0">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-black text-prideDark tracking-tighter uppercase">Pride</span>
-          <span className="text-xl sm:text-2xl lg:text-3xl font-black text-prideOrange tracking-tighter uppercase">Marine</span>
-          <span className="text-xl sm:text-2xl lg:text-3xl font-black text-prideDark tracking-tighter uppercase hidden md:block">
+        {/* Logo - FIXED: Text scaled for mobile to fit "SERVICES LLP" on one line */}
+        <Link href="/" className="flex items-center gap-1 sm:gap-1.5 z-50 whitespace-nowrap shrink-0">
+          <span className="text-[15px] sm:text-2xl lg:text-3xl font-black text-prideDark tracking-tighter uppercase">Pride</span>
+          <span className="text-[15px] sm:text-2xl lg:text-3xl font-black text-prideOrange tracking-tighter uppercase">Marine</span>
+          <span className="text-[15px] sm:text-2xl lg:text-3xl font-black text-prideDark tracking-tighter uppercase">
             Services LLP
           </span>
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -60,7 +58,6 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Mobile Menu Button */}
         <button 
           className="md:hidden z-50 text-prideDark focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -69,7 +66,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-10 z-40">
           {navLinks.map((link) => {
