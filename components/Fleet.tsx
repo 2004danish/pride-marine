@@ -6,41 +6,42 @@ import { Database, ArrowRight } from "lucide-react";
 
 export default function Fleet() {
   return (
-    <section className="w-full py-20 lg:py-32 px-4 bg-gray-50 overflow-hidden relative">
+    <section className="w-full py-12 lg:py-16 px-4 bg-gray-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col lg:flex-row lg:items-center justify-between bg-[#0a0a0a] border border-gray-800 p-8 sm:p-12 lg:p-16 shadow-2xl rounded-none"
+          transition={{ duration: 0.5 }}
+          className="flex flex-col md:flex-row md:items-center justify-between bg-[#0a0a0a] border-l-4 border-prideOrange p-6 sm:p-8 lg:px-12 lg:py-10 shadow-2xl"
         >
-          <div className="max-w-2xl mb-10 lg:mb-0">
-            <div className="flex items-center gap-3 mb-6">
-              <Database className="text-prideOrange" size={24} />
-              <span className="text-prideOrange font-bold tracking-[0.2em] uppercase text-[10px] lg:text-xs">
+          {/* Left Side: Text Content */}
+          <div className="mb-6 md:mb-0">
+            <div className="flex items-center gap-2 mb-2 sm:mb-3">
+              <Database className="text-prideOrange" size={18} />
+              <span className="text-prideOrange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs">
                 Maritime Intelligence
               </span>
             </div>
             
-            {/* FIXED READABILITY: Changed text-gray-500 to text-white */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[1.05] mb-6">
-              Global Stowage <br className="hidden sm:block"/>Factor Database
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
+              Stowage Factor
             </h2>
             
-            {/* FIXED READABILITY: Changed from font-light/text-gray-400 to font-normal/text-gray-200 and bumped the size */}
-            <p className="text-gray-200 font-normal leading-relaxed text-base md:text-lg mb-8">
-              A critical tool for precise cargo planning and maximum vessel yield. Access our comprehensive, interactive database containing accurate stowage factors for over 200 specialized cargo types.
+            {/* FIXED: Made it big, bold, white, and fully visible */}
+            <p className="text-white font-bold text-lg sm:text-xl tracking-wide">
+              Check your stowage factor.
             </p>
           </div>
 
+          {/* Right Side: Button */}
           <div className="flex-shrink-0">
             <Link 
               href="/stowage-factor"
-              className="group flex items-center justify-center gap-4 bg-prideOrange text-white px-8 lg:px-12 py-5 lg:py-6 font-extrabold text-xs lg:text-sm tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-300 w-full sm:w-auto"
+              className="group flex items-center justify-center gap-3 bg-prideOrange text-white px-8 py-4 font-extrabold text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-300 w-full md:w-auto"
             >
               Open Database 
-              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
+              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={18} />
             </Link>
           </div>
         </motion.div>

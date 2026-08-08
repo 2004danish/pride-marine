@@ -18,15 +18,12 @@ export default function Hero() {
           muted 
           playsInline 
           preload="auto"
-          // FIXED: Removed opacity-90 so the video is fully visible and vibrant
           className="w-full h-full object-cover"
         >
           <source src="/breakbulk.mp4" type="video/mp4" />
         </video>
         
-        {/* FIXED: Massively lightened the mobile gradient so the video isn't hidden in blackness */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 md:via-black/70 to-transparent w-full md:w-3/4"></div>
-        {/* FIXED: Reduced the universal dark layer from 40% to 20% */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 md:via-black/70 to-transparent w-full md:w-3/4"></div>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
@@ -34,36 +31,48 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-12 md:pt-16">
         <div className="max-w-3xl">
           
+          {/* Main Headline */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6"
-          >
-            <div className="w-8 md:w-16 h-1 bg-prideOrange"></div>
-            <span className="text-prideOrange font-extrabold tracking-[0.15em] md:tracking-[0.2em] uppercase text-sm sm:text-base md:text-xl drop-shadow-md">
-              Pride Marine Services LLP
-            </span>
-          </motion.div>
-
-          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-black uppercase tracking-tighter text-white leading-[0.95] mb-6 md:mb-8 flex flex-col drop-shadow-2xl"
+            className="mb-8 md:mb-10 drop-shadow-2xl"
           >
-            <span>Smart.</span>
-            <span className="text-gray-300">Fast.</span>
-            <span>Safe.</span>
-          </motion.h1>
+            <h1 className="flex flex-col items-start gap-y-2 sm:gap-y-3 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter text-white leading-none">
+              
+              {/* Row 1 */}
+              <span className="flex items-center gap-3 md:gap-5">
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+                <span>SMART</span>
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+              </span>
+              
+              {/* Row 2 */}
+              <span className="flex items-center gap-3 md:gap-5 text-gray-300">
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+                <span>FAST</span>
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+              </span>
+              
+              {/* Row 3 */}
+              <span className="flex items-center gap-3 md:gap-5">
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+                <span>SAFE</span>
+                <span className="text-prideOrange font-light text-3xl sm:text-4xl lg:text-5xl opacity-60 tracking-widest mt-1">||</span>
+              </span>
+              
+            </h1>
+          </motion.div>
           
+          {/* Subtitle - REFINED: New punchy service description */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-base sm:text-lg md:text-xl font-medium text-white max-w-sm sm:max-w-lg md:max-w-2xl mb-8 md:mb-12 leading-relaxed tracking-wide drop-shadow-2xl"
+            className="text-base sm:text-lg md:text-xl font-medium text-white max-w-sm sm:max-w-lg md:max-w-2xl mb-8 md:mb-12 leading-relaxed tracking-widest uppercase drop-shadow-2xl"
           >
-            Delivering reliable maritime solutions with precision and expertise. From port operations to global logistics, we connect businesses through efficient, dependable services.
+            SMART MARITIME SOLUTIONS & CONSULTANCY <br className="hidden sm:block" />
+            VESSEL CHARTERING AND COMMERCIAL MANAGEMENT
           </motion.p>
           
           <motion.div 

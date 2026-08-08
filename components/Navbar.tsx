@@ -29,7 +29,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-4" : "bg-white py-6 md:py-8"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         
-        {/* Logo - FIXED: Text scaled for mobile to fit "SERVICES LLP" on one line */}
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-1 sm:gap-1.5 z-50 whitespace-nowrap shrink-0">
           <span className="text-[15px] sm:text-2xl lg:text-3xl font-black text-prideDark tracking-tighter uppercase">Pride</span>
           <span className="text-[15px] sm:text-2xl lg:text-3xl font-black text-prideOrange tracking-tighter uppercase">Marine</span>
@@ -43,9 +43,10 @@ export default function Navbar() {
             const isActive = pathname === link.href;
             return (
               <div key={link.name}>
+                {/* FIXED: Changed to font-black and tracking-tighter to match the logo */}
                 <Link 
                   href={link.href}
-                  className={`text-sm lg:text-base font-bold uppercase tracking-widest transition-colors duration-300 ${
+                  className={`text-sm lg:text-base font-black uppercase tracking-tighter transition-colors duration-300 ${
                     isActive 
                       ? "text-prideOrange" 
                       : "text-gray-900 hover:text-prideOrange"
@@ -75,7 +76,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`text-2xl font-black uppercase tracking-widest ${
+                className={`text-2xl font-black uppercase tracking-tighter ${
                   isActive ? "text-prideOrange" : "text-gray-900"
                 }`}
               >

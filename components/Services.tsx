@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion";
 import { Anchor, Ship, Box, Compass, Briefcase, Ruler } from "lucide-react";
 
 export default function Services() {
-  // UPDATED: Added unique, highly professional descriptions for each service
   const services = [
     { 
       title: "Ship Chartering Services", 
@@ -27,13 +26,14 @@ export default function Services() {
       description: "Data-driven insights and market analysis to help you secure competitive freight rates and make highly informed chartering decisions."
     },
     { 
-      title: "Commercial & Technical Mgmt", 
+      title: "Commercial & Technical Management", 
       icon: <Anchor size={36} strokeWidth={1.5} />,
       description: "End-to-end vessel management ensuring optimal performance, strict compliance, and cost-effective daily maritime operations."
     },
     { 
       title: "Maritime Project Support", 
-      icon: <Ruler size={36} strokeWidth={1.5} />,
+      // FIXED: Added a -rotate-45 class. Tilting it diagonally makes it look like a drafting/measuring tool just like your image, rather than a comb!
+      icon: <Ruler size={36} strokeWidth={1.5} className="-rotate-45 transform" />,
       description: "Specialized engineering and logistical support for complex heavy-lift, breakbulk, and demanding offshore maritime projects."
     }
   ];
@@ -79,7 +79,7 @@ export default function Services() {
               {/* Orange Hover Accent Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-prideOrange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               
-              {/* UPDATED: Flex container to put Icon and Title side-by-side */}
+              {/* Flex container to put Icon and Title side-by-side */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-prideDark group-hover:text-prideOrange transition-colors duration-500 shrink-0">
                   {service.icon}
@@ -89,7 +89,7 @@ export default function Services() {
                 </h3>
               </div>
               
-              {/* UPDATED: Darkened base text, brightened hover text, increased font size, mapped dynamic description */}
+              {/* Description */}
               <p className="text-gray-600 group-hover:text-gray-300 font-normal text-sm lg:text-base leading-relaxed transition-colors duration-500">
                 {service.description}
               </p>
