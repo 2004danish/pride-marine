@@ -39,8 +39,8 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-4">
               <span className="text-prideOrange font-black tracking-widest">P:</span>
-              {/* FIXED: Removed the first number and the pipe separator */}
-              <span className="tracking-widest">9825225143</span>
+              {/* FIXED: Added +91 country code */}
+              <span className="tracking-widest">+91 9825225143</span>
             </li>
             <li className="flex items-start gap-4">
               <span className="text-prideOrange font-black tracking-widest">E:</span>
