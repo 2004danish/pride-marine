@@ -96,13 +96,15 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="text-white font-extrabold uppercase tracking-widest text-[10px] sm:text-xs mb-2 sm:mb-3">Phone</h4>
-                <p className="tracking-wider text-xs sm:text-sm md:text-base">9687684442 | 9825225143</p>
+                {/* REMOVED FIRST NUMBER */}
+                <p className="tracking-wider text-xs sm:text-sm md:text-base">9825225143</p>
               </div>
               <div className="w-full">
                 <h4 className="text-white font-extrabold uppercase tracking-widest text-[10px] sm:text-xs mb-2 sm:mb-3">Email</h4>
                 <div className="flex flex-col space-y-1 tracking-wider text-xs sm:text-sm md:text-base leading-relaxed overflow-hidden">
-                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">GEN@PRIDEMARINE.IN</span>
-                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">OFFICE.PRIDEMARINE@GMAIL.COM</span>
+                  {/* CHANGED TO LOWERCASE */}
+                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">gen@pridemarine.in</span>
+                  <span className="break-all hover:text-prideOrange transition-colors cursor-pointer">office.pridemarine@gmail.com</span>
                 </div>
               </div>
             </div>
