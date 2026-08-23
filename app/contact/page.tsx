@@ -10,47 +10,46 @@ const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "600", "800", "
 export default function ContactPage() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false); // Controls the Thank You screen
+  const [isSuccess, setIsSuccess] = useState(false); 
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus("");
 
+    // Gather form data
     const formData = new FormData(e.currentTarget);
-    
-    // Web3Forms configuration
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
-    
-    // Combine First and Last name for the email
-    const firstName = formData.get("firstName");
-    const lastName = formData.get("lastName");
-    formData.append("name", `${firstName} ${lastName}`);
-    
-    // Set a custom subject line based on their inquiry choice
-    const inquiryType = formData.get("inquiryType");
-    formData.append("subject", `New Website Inquiry: ${inquiryType} from ${firstName}`);
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      inquiryType: formData.get("inquiryType"),
+      message: formData.get("message"),
+    };
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Send data to YOUR custom backend route!
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
-      if (data.success) {
-        // Show the Thank You screen
+      if (result.success) {
         setIsSuccess(true);
-        (e.target as HTMLFormElement).reset(); // Clear form in the background
+        (e.target as HTMLFormElement).reset(); 
         
-        // After 5 seconds, hide the Thank You screen and reset
         setTimeout(() => {
           setIsSuccess(false);
           setStatus("");
         }, 5000);
       } else {
-        setStatus("Something went wrong. Please try again.");
+        setStatus("Something went wrong on the server.");
       }
     } catch (error) {
       setStatus("Network error. Please check your connection.");
@@ -96,7 +95,6 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="text-white font-extrabold uppercase tracking-widest text-[10px] sm:text-xs mb-2 sm:mb-3">Phone</h4>
-                {/* ADDED +91 COUNTRY CODE */}
                 <p className="tracking-wider text-xs sm:text-sm md:text-base">+91 9825225143</p>
               </div>
               <div className="w-full">
@@ -135,9 +133,6 @@ export default function ContactPage() {
             ) : (
               /* --- CONTACT FORM --- */
               <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8 w-full overflow-hidden animate-in fade-in duration-500">
-                
-                {/* Web3Forms Spam Protection (Honeypot) */}
-                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                   <div className="flex flex-col">
